@@ -3,13 +3,11 @@ import {
   createTheme,
   ThemeProvider,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Line } from "react-chartjs-2";
 import { HistoricalChart } from "../config/api";
 import { CryptoState } from "../CryptoContext";
-import { LineChart } from "recharts";
+
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
@@ -26,6 +24,7 @@ const CoinInfo = ({ coin }) => {
 
   useEffect(() => {
     fetchHistoricData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency, days]);
 
   const darkTheme = createTheme({
@@ -58,7 +57,7 @@ const CoinInfo = ({ coin }) => {
           />
         ) : (
           <>
-            
+            {setDays}
           </>
         )}
       </div>

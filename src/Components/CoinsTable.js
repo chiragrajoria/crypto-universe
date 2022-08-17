@@ -25,8 +25,10 @@ const Coinstable = () => {
     setLoading(false);
   }
 console.log(coins)
+
   useEffect(() => {
     fetchCoins();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency])
   
   const darkTheme=createTheme({
